@@ -11,3 +11,10 @@ jobs:
         with:
           github_user_name: james58899
           svg_out_path: dist/github-snake.svg
+      - name: push github-snake.svg
+        uses: crazy-max/ghaction-github-pages@v2.5.0
+        with:
+          target_branch: snk
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
