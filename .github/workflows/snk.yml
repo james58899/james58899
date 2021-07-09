@@ -1,0 +1,13 @@
+name: snk
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Platane/snk@v0.0.18
+        with:
+          github_user_name: james58899
+          svg_out_path: dist/github-snake.svg
