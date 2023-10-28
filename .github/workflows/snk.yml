@@ -7,10 +7,12 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: Platane/snk@master
+      - uses: Platane/snk/svg-only@v3
         with:
           github_user_name: james58899
-          svg_out_path: dist/github-snake.svg
+          outputs: |
+            dist/github-snake.svg
+            dist/github-snake-dark.svg?palette=github-dark
       - name: push github-snake.svg
         uses: crazy-max/ghaction-github-pages@v2.5.0
         with:
